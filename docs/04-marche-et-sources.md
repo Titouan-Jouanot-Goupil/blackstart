@@ -59,11 +59,11 @@ Prévoir une réponse sur l'origine chinoise de Qwen, même exécuté en local. 
 
 Ces chiffres sont des suppositions de travail, pas des faits :
 
-Chiffres retenus le 3 novembre dans `analyse-marche-blackstart.md`, repris tels quels par le deck, la landing et l'executive summary :
+Chiffres revus le 7 novembre (prix baissés) dans `analyse-marche-blackstart.md`, repris tels quels par le deck, la landing et l'executive summary :
 
-- **TAM :** 6 800 ETI × 55 k€ de budget résilience ≈ 374 M€ par an (55 k€ : hypothèse).
-- **SAM :** ~2 600 ETI industrielles et logistiques × 40 % avec un parc Linux (hypothèse) ≈ 1 040 ETI × 50 k€ ≈ 52 M€ par an. 2 100 ETI industrielles : Insee Première n° 2084, déc. 2025, données 2023 (https://www.insee.fr/fr/statistiques/8673351). 500 ETI de transport et d'entreposage : estimation, 7,4 % des effectifs des ETI (Insee, Ésane 2021, https://www.insee.fr/fr/statistiques/7678536) appliqués aux 6 800 ETI.
-- **SOM année 5 :** 45 clients sous abonnement (~4 % du SAM), 2,07 M€ de CA (prévisionnel de l'analyse de marché, tarifs du 5 nov. : audit 15–25 k€, migration 30–60 k€ par VM, abonnement 2–5 k€ par mois et par application).
+- **TAM :** 6 800 ETI × 25 k€ de panier annuel moyen ≈ 170 M€ par an (25 k€ : hypothèse, audit et migration la 1re année puis abonnement).
+- **SAM :** ~2 600 ETI industrielles et logistiques × 40 % avec un parc Linux (hypothèse) ≈ 1 040 ETI × 25 k€ ≈ 26 M€ par an. 2 100 ETI industrielles : Insee Première n° 2084, déc. 2025, données 2023 (https://www.insee.fr/fr/statistiques/8673351). 500 ETI de transport et d'entreposage : estimation, 7,4 % des effectifs des ETI (Insee, Ésane 2021, https://www.insee.fr/fr/statistiques/7678536) appliqués aux 6 800 ETI.
+- **SOM année 5 :** 61 clients sous abonnement (~6 % du SAM), 1,55 M€ de CA (prévisionnel de l'analyse de marché, tarifs du 7 nov. : audit 8–12 k€, migration 10–15 k€ par VM, abonnement 500–900 € par mois et par application, les plus bas qui couvrent le plan d'embauche ; pertes rattrapées en année 4). Tarifs du 5 nov. (audit 15–25 k€, migration 30–60 k€, abonnement 2–5 k€/mois) abandonnés : trop chers.
 
 Ancienne hypothèse, abandonnée : 6 200 ETI × 25 % × 40 k€ ≈ 62 M€. Remplacer la part Linux et les budgets par ce qu'entendent les entretiens.
 

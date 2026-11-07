@@ -1,6 +1,6 @@
 // Convertit les livrables de Black Start en PDF dans livrables/.
 // Usage (depuis la racine du dépôt) : node livrables/source/convertir.mjs [nom…]
-// Sans argument, convertit tout. Noms : oral, affiche, landing, rapport, analyse-marche.
+// Sans argument, convertit tout. Noms : oral, affiche, landing, rapport, analyse-marche, eti.
 //
 // Dépendances : Node ≥ 22 (WebSocket natif) et un Chromium headless, lancé en --no-sandbox comme
 // Playwright (pages locales du dépôt uniquement).
@@ -127,6 +127,13 @@ const LIVRABLES = {
   "executive-summary": () => ({
     url: fichier("EXECUTIVE_SUMMARY.html"), largeur: 794, hauteur: 1123,
     sortie: join(SORTIE, "executive-summary-black-start.pdf"),
+    prep: injecter(COULEURS),
+    pdf: { preferCSSPageSize: true },
+  }),
+  // Présentation ETI pour les prospects : une diapo 1920 × 1080 par page (source : presentation-eti/).
+  eti: () => ({
+    url: fichier("presentation-eti/black-start-eti.html"), largeur: 1920, hauteur: 1080,
+    sortie: join(SORTIE, "presentation-eti-black-start.pdf"),
     prep: injecter(COULEURS),
     pdf: { preferCSSPageSize: true },
   }),

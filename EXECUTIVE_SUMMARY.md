@@ -28,13 +28,13 @@ Les sauvegardes sont visées : chez 94 % des victimes de rançongiciel, l'attaqu
 
 | | Valeur | Calcul |
 |---|---|---|
-| TAM | 374 M€/an | 6 800 ETI × 55 k€ |
-| SAM | 52 M€/an | ~2 600 ETI industrielles et logistiques × 40 % avec un parc Linux (hypothèse) = ~1 040 ETI × 50 k€ |
-| SOM, année 5 | 2,07 M€ | 45 clients, ~4 % du SAM |
+| TAM | 170 M€/an | 6 800 ETI × 25 k€ |
+| SAM | 26 M€/an | ~2 600 ETI industrielles et logistiques × 40 % avec un parc Linux (hypothèse) = ~1 040 ETI × 25 k€ |
+| SOM, année 5 | 1,55 M€ | 61 clients, ~6 % du SAM |
 
 **Déclencheurs :** renouvellement de la cyberassurance, audit d'un client, incident récent, départ de l'admin. **Cadre juridique :** NIS2 vise ~15 000 entités en France ; la loi Résilience qui la transpose n'est pas votée (retirée de l'ordre du jour de l'Assemblée en octobre 2026), conformité visée fin 2028 par l'ANSSI. Argument secondaire, pas moteur de la vente.
 
-Sources : ministère de l'Économie (2022), Insee Première n° 2084 (2025), Silicon.fr, Myra Security, AOCSI. Part Linux et budgets : hypothèses de l'équipe.
+Sources : ministère de l'Économie (2022), Insee Première n° 2084 (2025), Silicon.fr, Myra Security, AOCSI. Part Linux et panier moyen (25 k€ par an : audit et migration la 1re année, puis abonnement) : hypothèses de l'équipe.
 
 ## 3. Concurrence
 
@@ -77,9 +77,9 @@ Banc de test : une PME fictive de 3 serveurs Debian (logiciel de logistique avec
 
 | Offre | Prix | Contenu |
 |---|---|---|
-| Audit (porte d'entrée) | 15–25 k€ | 1 semaine en lecture seule, score de reconstructibilité sur 5 à 10 applications critiques |
-| Migration (forfait) | 30–60 k€ par VM | Reconstruction des VM critiques depuis le code, bascule chronométrée |
-| Abonnement (récurrent) | 2–5 k€ par mois et par application | Test de reprise régulier, détection de dérive, rapport de reprise |
+| Audit (porte d'entrée) | 8–12 k€ | 1 semaine en lecture seule, score de reconstructibilité sur 5 à 10 applications critiques |
+| Migration (forfait) | 10–15 k€ par VM | Reconstruction des VM critiques depuis le code, bascule chronométrée |
+| Abonnement (récurrent) | 500–900 € par mois et par application | Test de reprise régulier, détection de dérive, rapport de reprise |
 
 ## 7. Go-to-market
 
@@ -96,23 +96,24 @@ Cycle de 4 à 8 semaines du contact à la signature. LTV/CAC visé > 10. Roadmap
 
 | k€ | A1 · 2027 | A2 | A3 | A4 | A5 · 2031 |
 |---|---:|---:|---:|---:|---:|
-| Clients sous abonnement | 3 | 10 | 20 | 32 | 45 |
-| CA audit + migration | 225 | 450 | 675 | 810 | 990 |
-| CA abonnement | 72 | 240 | 480 | 768 | 1 080 |
-| **Chiffre d'affaires** | **297** | **690** | **1 155** | **1 578** | **2 070** |
+| Clients sous abonnement | 5 | 14 | 28 | 43 | 61 |
+| CA audit + migration | 140 | 280 | 420 | 504 | 616 |
+| CA abonnement | 45 | 176 | 374 | 641 | 933 |
+| **Chiffre d'affaires** | **185** | **456** | **794** | **1 145** | **1 549** |
 | Charges | 360 | 465 | 710 | 965 | 1 265 |
-| Résultat | −63 | 225 | 445 | 613 | 805 |
+| Résultat | −175 | −9 | 84 | 180 | 284 |
+| Résultat cumulé | −175 | −184 | −100 | 80 | 364 |
 | Effectif | 5 | 5 | 7 | 9 | 12 |
 
-Hypothèses (bas des fourchettes) : 5, 10, 15, 18, 22 nouveaux clients par an, chacun à 15 k€ d'audit + 30 k€ (1 VM), puis 2 k€/mois ; salaires chargés 60 à 80 k€.
+Hypothèses (bas des fourchettes) : 5, 10, 15, 18, 22 nouveaux clients par an, chacun à 8 k€ d'audit + 2 serveurs à 10 k€, puis 3 applications à 500 €/mois ; 10 % de départs par an ; salaires chargés 60 à 80 k€. Prix revus le 7 novembre : les plus bas qui couvrent ce plan d'embauche.
 
 ## 9. Financement
 
-- **Pré-seed, 2027 : 50–100 k€** (Bourse French Tech, i-Lab, love money) pour finaliser l'outil et signer les premiers clients pilotes.
+- **Pré-seed, 2027 : 150–250 k€** (Bourse French Tech, i-Lab, love money) pour finaliser l'outil et signer les premiers clients pilotes.
 - **Seed, 2028 : 0,5–1 M€** (fonds cyber, France 2030) pour les consultants, le 2e commercial et le 2e développeur de l'outil.
 - **Série A, 2030 : 3–5 M€** (fonds de croissance) pour Windows et AD, l'équipe commerciale et l'Europe.
 
-**Pourquoi lever si le prévisionnel est rentable dès l'année 2 ?** Le pré-seed couvre la perte de l'année 1 (−63 k€). Ensuite, la levée sert à prendre de l'avance : Windows et AD avant la conformité NIS2 (fin 2028), recrutements avant la demande, trésorerie des projets payés à 60 jours.
+**Pourquoi lever ?** Le pré-seed couvre les pertes des années 1 et 2 (−184 k€ cumulés) ; l'activité est rentable dès l'année 3 et les pertes sont rattrapées en année 4. Ensuite, la levée sert à prendre de l'avance : Windows et AD avant la conformité NIS2 (fin 2028), recrutements avant la demande, trésorerie des projets payés à 60 jours.
 
 ## 10. Enjeux RSE, chiffrés
 

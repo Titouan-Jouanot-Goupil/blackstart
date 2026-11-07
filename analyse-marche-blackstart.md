@@ -25,9 +25,9 @@ Toute entreprise française ayant des serveurs configurés à la main et un beso
 - 6 800 ETI (ministère de l'Économie, 2022 ; 6 218 en 2021 selon l'Insee)
 - ~1 500 collectivités et organismes visés par NIS2 (Sénat)
 
-En ne retenant que les ETI et un budget résilience moyen de 55 k€ par an (hypothèse de l'équipe) :
+En ne retenant que les ETI et un panier Black Start moyen de 25 k€ par an (hypothèse de l'équipe : audit et migration la 1re année, puis abonnement) :
 
-$$\text{TAM France} = 6\,800 \times 55\,\text{k€} \approx 374\,\text{M€/an}$$
+$$\text{TAM France} = 6\,800 \times 25\,\text{k€} \approx 170\,\text{M€/an}$$
 
 ### 1.2 SAM — Serviceable Addressable Market
 
@@ -39,12 +39,12 @@ $$\text{TAM France} = 6\,800 \times 55\,\text{k€} \approx 374\,\text{M€/an}$
 | ETI transports/logistique | ~500 | Estimation : 7,4 % des effectifs des ETI sont dans les transports et l'entreposage (Insee, Ésane 2021), appliqués aux 6 800 ETI |
 | **Sous-total ETI cibles** | **~2 600** | |
 | Dont parc Linux significatif (hypothèse 40 %) | **~1 040** | Hypothèse de l'équipe |
-| Budget moyen annuel résilience (audit + reconstruction + suivi) | **40–60 k€** | Hypothèse de l'équipe |
+| Panier annuel moyen (audit + migration la 1re année, puis abonnement) | **25 k€** | Hypothèse de l'équipe |
 
-$$\text{SAM} = 1\,040 \times 50\,\text{k€} \approx 52\,\text{M€/an}$$
+$$\text{SAM} = 1\,040 \times 25\,\text{k€} \approx 26\,\text{M€/an}$$
 
 > [!IMPORTANT]
-> Le SAM de 52 M€ est prudent : il exclut les PME industrielles, les collectivités NIS2, le secteur santé (programme CaRE, volet continuité et reprise doté de 45 M€) et les éditeurs de logiciels.
+> Le SAM de 26 M€ est prudent : il exclut les PME industrielles, les collectivités NIS2, le secteur santé (programme CaRE, volet continuité et reprise doté de 45 M€) et les éditeurs de logiciels.
 
 ### 1.3 SOM — Serviceable Obtainable Market (Année 5)
 
@@ -53,13 +53,13 @@ Le SOM reprend le prévisionnel de la section 5 : 12 personnes en année 5, dont
 | Paramètre (année 5) | Hypothèse |
 |---|---|
 | Nouveaux clients (audit + migration) | 22 |
-| Clients sous abonnement | 45 (~4 % des 1 040 ETI du SAM) |
-| CA audit + migration (15 k€ + 1 VM à 30 k€) | 990 k€ |
-| CA abonnement (1 application à 2 k€/mois) | 1 080 k€ |
+| Clients sous abonnement | 61 (~6 % des 1 040 ETI du SAM) |
+| CA audit + migration (8 k€ + 2 serveurs à 10 k€) | 616 k€ |
+| CA abonnement (3 applications à 500 €/mois) | 933 k€ |
 
-$$\text{SOM année 5} = 990\,\text{k€} + 1\,080\,\text{k€} \approx 2\,070\,\text{k€}$$
+$$\text{SOM année 5} = 616\,\text{k€} + 933\,\text{k€} \approx 1\,549\,\text{k€}$$
 
-> Objectif jury : **≥ 700–800 k€ de CA en année 5**. Le SOM le dépasse avec 45 clients sous abonnement ; l'abonnement seul (1 080 k€) l'atteint.
+> Objectif jury : **≥ 700–800 k€ de CA en année 5**. Le SOM le dépasse avec 61 clients sous abonnement ; l'abonnement seul (933 k€) l'atteint.
 
 ---
 
@@ -140,11 +140,11 @@ flowchart TD
 
 | Phase | Segment | Taille estimée | Panier moyen | Justification |
 |---|---|---|---|---|
-| **1–2** | ETI industrielles/logistiques (Linux) | ~1 040 | 40–60 k€ | Démo logistique, besoin immédiat, budget identifiable |
-| **3–4** | Éditeurs de logiciels FR | ~300–500 | 30–50 k€ | Parc Linux natif, sensibles à l'IaC |
+| **1–2** | ETI industrielles/logistiques (Linux) | ~1 040 | 25–40 k€ la 1re année | Démo logistique, besoin immédiat, budget identifiable |
+| **3–4** | Éditeurs de logiciels FR | ~300–500 | 20–30 k€ | Parc Linux natif, sensibles à l'IaC |
 | **3–4** | Canal infogérants | ~50 ESN partenaires | Commission 20 % | Effet de levier commercial, accès aux PME |
-| **5–6** | PME industrielles 50+ | ~12 000 (estimation de l'équipe) | 15–25 k€ | Volume, offre packagée, via infogérants |
-| **5–6** | Collectivités NIS2 | ~1 500 | 20–35 k€ | Obligation réglementaire, marchés publics |
+| **5–6** | PME industrielles 50+ | ~12 000 (estimation de l'équipe) | 10–15 k€ | Volume, offre packagée, via infogérants |
+| **5–6** | Collectivités NIS2 | ~1 500 | 15–25 k€ | Obligation réglementaire, marchés publics |
 | **5–6** | Extension Windows/AD | Multiplicateur ×3 | +30 % prix | Couverture du parc réel des ETI |
 
 ---
@@ -193,32 +193,34 @@ flowchart TD
 
 | Offre | Prix unitaire | Récurrence |
 |---|---|---|
-| **Audit** (5–10 apps, 1 semaine) | 15 000 – 25 000 € | Ponctuel (porte d'entrée) |
-| **Migration** (reconstruction des VM critiques) | 30 000 – 60 000 € par VM | Forfait |
-| **Abonnement** (détection de dérive, test de reprise régulier) | 2 000 – 5 000 € par mois et par application | MRR |
+| **Audit** (5–10 apps, 1 semaine) | 8 000 – 12 000 € | Ponctuel (porte d'entrée) |
+| **Migration** (reconstruction des VM critiques) | 10 000 – 15 000 € par VM | Forfait |
+| **Abonnement** (détection de dérive, test de reprise régulier) | 500 – 900 € par mois et par application | MRR |
 
-Le prévisionnel retient le bas des fourchettes : audit à 15 k€, **une seule VM migrée** (30 k€) et **une seule application sous abonnement** (2 k€/mois) par client.
+Prix revus le 7 novembre 2026 (anciens tarifs : audit 15–25 k€, migration 30–60 k€ par VM, abonnement 2–5 k€ par mois) : ce sont les plus bas qui couvrent le plan d'embauche de la section 5.4.
 
-**Panier de la première année :** audit (15 k€) + migration (30 k€) = **45 k€**, puis 24 k€ par an d'abonnement.
+Le prévisionnel retient le bas des fourchettes : audit à 8 k€, **deux serveurs migrés** (2 × 10 k€) et **trois applications sous abonnement** (3 × 500 €/mois) par client. Un nouveau client commence son abonnement en milieu d'année ; 10 % des clients partent chaque année.
+
+**Panier de la première année :** audit (8 k€) + migration (20 k€) = **28 k€**, puis 18 k€ par an d'abonnement.
 
 ### 5.2 Prévisionnel de CA
 
 | | **A1 (2027)** | **A2 (2028)** | **A3 (2029)** | **A4 (2030)** | **A5 (2031)** | **A6 (2032)** |
 |---|---|---|---|---|---|---|
 | **Nouveaux clients** | 5 | 10 | 15 | 18 | 22 | 28 |
-| **Clients en portefeuille (abo)** | 3 | 10 | 20 | 32 | 45 | 60 |
-| **CA Audit** | 75 k€ | 150 k€ | 225 k€ | 270 k€ | 330 k€ | 420 k€ |
-| **CA Migration** | 150 k€ | 300 k€ | 450 k€ | 540 k€ | 660 k€ | 840 k€ |
-| **CA Abonnement (MRR)** | 72 k€ | 240 k€ | 480 k€ | 768 k€ | 1 080 k€ | 1 440 k€ |
-| **CA Total** | **297 k€** | **690 k€** | **1 155 k€** | **1 578 k€** | **2 070 k€** | **2 700 k€** |
+| **Clients en portefeuille (abo)** | 5 | 14 | 28 | 43 | 61 | 83 |
+| **CA Audit** | 40 k€ | 80 k€ | 120 k€ | 144 k€ | 176 k€ | 224 k€ |
+| **CA Migration** | 100 k€ | 200 k€ | 300 k€ | 360 k€ | 440 k€ | 560 k€ |
+| **CA Abonnement (MRR)** | 45 k€ | 176 k€ | 374 k€ | 641 k€ | 933 k€ | 1 295 k€ |
+| **CA Total** | **185 k€** | **456 k€** | **794 k€** | **1 145 k€** | **1 549 k€** | **2 079 k€** |
 
 ```mermaid
 xychart-beta
     title "Projection de CA Black Start (k€)"
     x-axis ["A1 2027", "A2 2028", "A3 2029", "A4 2030", "A5 2031", "A6 2032"]
-    y-axis "CA en k€" 0 --> 3000
-    bar [297, 690, 1155, 1578, 2070, 2700]
-    line [72, 240, 480, 768, 1080, 1440]
+    y-axis "CA en k€" 0 --> 2500
+    bar [185, 456, 794, 1145, 1549, 2079]
+    line [45, 176, 374, 641, 933, 1295]
 ```
 
 > [!TIP]
@@ -233,8 +235,11 @@ xychart-beta
 | **Commercial / marketing** | 30 k€ | 60 k€ | 100 k€ | 130 k€ | 160 k€ | 190 k€ |
 | **Divers (locaux, juridique, compta, déplacements)** | 20 k€ | 35 k€ | 50 k€ | 65 k€ | 80 k€ | 95 k€ |
 | **Total charges** | **360 k€** | **465 k€** | **710 k€** | **965 k€** | **1 265 k€** | **1 565 k€** |
-| **Résultat** | **−63 k€** | **+225 k€** | **+445 k€** | **+613 k€** | **+805 k€** | **+1 135 k€** |
-| **Marge nette** | −21 % | 33 % | 39 % | 39 % | 39 % | 42 % |
+| **Résultat** | **−175 k€** | **−9 k€** | **+84 k€** | **+180 k€** | **+284 k€** | **+514 k€** |
+| **Résultat cumulé** | −175 k€ | −184 k€ | −100 k€ | +80 k€ | +364 k€ | +878 k€ |
+| **Marge nette** | −95 % | −2 % | 11 % | 16 % | 18 % | 25 % |
+
+Rentable dès l'année 3, pertes rattrapées en année 4.
 
 ### 5.4 Effectifs prévisionnels
 
@@ -285,7 +290,7 @@ flowchart LR
 | **A3–A4** | Inbound marketing (SEO "test de reprise", "NIS2 conformité") | ~1 500 € |
 | **A5–A6** | Commercial outbound dédié + salons sectoriels | ~3 000 € |
 
-**CAC moyen visé :** 2 000–3 000 € → **LTV/CAC > 10** (LTV abonnement sur 3 ans : 72 k€).
+**CAC moyen visé :** 2 000–3 000 € → **LTV/CAC > 10** (LTV abonnement sur 3 ans : 54 k€).
 
 ---
 
@@ -306,12 +311,12 @@ flowchart LR
 
 | Phase | Besoin | Source | Usage |
 |---|---|---|---|
-| **Pré-seed (2027)** | 50–100 k€ | Bpifrance (bourse French Tech), concours i-Lab, love money | Finaliser l'outil, premiers clients pilotes |
+| **Pré-seed (2027)** | 150–250 k€ | Bpifrance (bourse French Tech), concours i-Lab, love money | Finaliser l'outil, premiers clients pilotes, pertes des années 1 et 2 |
 | **Seed (fin 2027 – 2028)** | 500 k€ – 1 M€ | VC spécialisés cyber (Auriga, Kima, Alven), subventions France 2030 | 3e consultant et 2e commercial (A3), 2e développeur de l'outil (A4), marketing |
 | **Series A (2030)** | 3–5 M€ | VC growth | Scaling commercial (3 commerciaux), R&D Windows/AD, expansion DACH |
 
 > [!TIP]
-> **Pourquoi lever alors que le prévisionnel est rentable dès l'année 2 ?** Le pré-seed couvre la perte de l'année 1 (−63 k€) : les 5 fondateurs sont salariés dès le départ, avant que l'abonnement ne monte. Ensuite, le prévisionnel recrute au rythme du chiffre d'affaires, donc lentement. La levée sert à prendre de l'avance : Windows et Active Directory prêts avant la conformité NIS2 attendue fin 2028, des recrutements avant la demande, et la trésorerie des projets payés jusqu'à 60 jours après livraison.
+> **Pourquoi lever ?** Le pré-seed couvre les pertes des années 1 et 2 (−184 k€ cumulés) : les 5 fondateurs sont salariés dès le départ, avant que l'abonnement ne monte. L'activité devient rentable en année 3 et les pertes sont rattrapées en année 4. Ensuite, le prévisionnel recrute au rythme du chiffre d'affaires, donc lentement. La levée sert à prendre de l'avance : Windows et Active Directory prêts avant la conformité NIS2 attendue fin 2028, des recrutements avant la demande, et la trésorerie des projets payés jusqu'à 60 jours après livraison.
 
 ---
 
@@ -327,8 +332,8 @@ flowchart LR
 
 > [!IMPORTANT]
 > **Objectif jury : 700–800 k€ de CA en année 5.**
-> Notre projection atteint **2 070 k€ en année 5** avec 45 clients en portefeuille, ce qui correspond à une pénétration de **~4 % du SAM** — un objectif réaliste pour une startup spécialisée.
+> Notre projection atteint **1 549 k€ en année 5** avec 61 clients en portefeuille, ce qui correspond à une pénétration de **~6 % du SAM** — un objectif réaliste pour une startup spécialisée.
 
 ---
 
-*Données au 5 novembre 2026. Les sources sont citées dans chaque section ; les prix et les taux de pénétration sont des hypothèses de l'équipe.*
+*Données au 5 novembre 2026, prix et prévisionnel revus le 7 novembre 2026. Les sources sont citées dans chaque section ; les prix et les taux de pénétration sont des hypothèses de l'équipe.*

@@ -1,0 +1,18 @@
+{
+  "v": 4,
+  "createdOnFiles": {"v": 1, "at": "2026-11-07T15:00:00Z"},
+  "lists": "css",
+  "title": "Black Start, présentation ETI",
+  "order": ["cover", "probleme", "methode", "chiffres", "livrable", "offre", "contact"],
+  "sections": {
+    "s1": {"description": "Le problème : une sauvegarde ne prouve pas que l’activité repart", "start": "cover"},
+    "s2": {"description": "La méthode et les chiffres mesurés sur le prototype", "start": "methode"},
+    "s3": {"description": "Ce que reçoit le client, l’offre et la prochaine étape", "start": "livrable"}
+  },
+  "faces": {
+    "clash-display": {"family": "Clash Display", "src": "/_blob/20f5ea03dd399a171804ded20acec61e"},
+    "ibm-plex-sans": {"family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500;600&display=swap"},
+    "ibm-plex-mono": {"family": "IBM Plex Mono", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@500;600&display=swap"}
+  },
+  "designSystems": []
+}

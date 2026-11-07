@@ -74,7 +74,7 @@ Cabinet de conseil équipé de son propre outil. L'outil traite les cas courants
 
 Déclencheurs d'achat à valider : audit d'un client, renouvellement de cyberassurance, incident récent, test de reprise. NIS2 sert d'argument secondaire, pas de moteur unique.
 
-Les prix ne sont pas fixés. Le support officiel attend au moins 700 à 800 k€ de chiffre d'affaires après 5 ans.
+Prix indicatifs revus à la baisse le 7 novembre (Titouan) : audit 8–12 k€, migration 10–15 k€ par serveur, abonnement 500–900 € par mois et par application. Ce sont les plus bas qui couvrent le plan d'embauche (5, 5, 7, 9, 12 personnes) : pertes rattrapées en année 4, 1,55 M€ de chiffre d'affaires en année 5. Le support officiel attendait au moins 700 à 800 k€ de chiffre d'affaires après 5 ans.
 
 ## Décisions prises
 
