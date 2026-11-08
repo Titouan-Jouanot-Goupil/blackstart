@@ -4,6 +4,8 @@ Présentation courte (7 diapos) à envoyer à une ETI prospect : problème, mét
 
 - `black-start-eti.html` : page autonome (polices et image intégrées), à ouvrir dans un navigateur.
 - `../livrables/presentation-eti-black-start.pdf` : version PDF, une diapo par page.
+- `mail-prospection.md` : mail de premier contact et relance, à envoyer avec le PDF.
+- `prospects-eti.md` : première liste d'ETI à contacter, avec sources (8 nov. 2026).
 - `source/` : une diapo par fichier (`slides/<id>.html`), ordre et titre dans `deck.json`.
 
 Version en ligne, modifiable et exportable (PowerPoint, PDF) : https://claude.ai/artifact/YaDY3A4bSGRMX5KHfvkgTa. Elle est privée : la partager depuis son menu Share avant de l'envoyer.
