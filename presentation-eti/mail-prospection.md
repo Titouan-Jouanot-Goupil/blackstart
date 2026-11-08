@@ -12,7 +12,7 @@ Premier contact avec une ETI, pour savoir si Black Start l'intéresse. But : obt
 
 **Objet** (au choix) :
 - Sauriez-vous redémarrer [nom de l'entreprise] après une attaque ?
-- Vos sauvegardes permettent vraiment une reprise d'activité ?
+- Vos sauvegardes permettent-elles vraiment une reprise d'activité ?
 - Avis d'un DSI sur un projet de reprise après sinistre
 
 > Bonjour [Madame / Monsieur] [Nom],
